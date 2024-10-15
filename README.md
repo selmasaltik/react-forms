@@ -8,14 +8,14 @@
 
 **What’s So Difficult?**
 
-**-Form Submission-**
+**<ins>Form Submission</ins>**
 
 - Handling submission is relatively ***easy***
 - Entered values can be managed via ***state***
 - Alternatively, they can be extracted via ***refs***
 - Or via ***FormData*** and native browser features
 
-**-Input Validation-**
+**<ins>Input Validation</ins>**
 
 - Providing a good user experience is ***tricky***
 - You can ***validate*** on every ***keystroke*** → errors may be shown ***too early***
