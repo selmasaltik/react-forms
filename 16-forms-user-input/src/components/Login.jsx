@@ -1,6 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Login() {
+  const [emailIsInvalid, setEmailIsInvalid] = useState(false);
+
   const email = useRef();
   const password = useRef();
 
@@ -17,7 +19,19 @@ export default function Login() {
     // email.current.value = '';
     // password.current.value = '';
 
-    event.target.reset(); // This is imperative code again but you can write less code with this method.
+    // This is imperative code again but you can write less code with this method.
+    // event.target.reset();
+
+    const emailIsValid = enteredEmail.includes('@');
+
+    if(!emailIsValid) {
+      setEmailIsInvalid(true);
+      return;
+    }
+
+    setEmailIsInvalid(false);
+
+    console.log('Sending HTTP request...');
   }
 
   return (
@@ -34,6 +48,9 @@ export default function Login() {
             autoComplete="off"
             ref={email}
           />
+          <div className="control-error">
+            {emailIsInvalid && <p>Please enter a valid email address.</p>}
+          </div>
         </div>
 
         <div className="control no-margin">
