@@ -14,6 +14,11 @@ export default function Login() {
 
     console.log(enteredValues);
 
+    setEnteredValues({ 
+      email: '', 
+      password: ''
+    });
+
     // console.log('User email: ' + enteredEmail);
     // console.log('User password: ' + enteredPassword);
   }
